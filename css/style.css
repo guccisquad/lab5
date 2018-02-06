@@ -1,0 +1,16 @@
+.col-lg-4 {
+  background-color: #c7c7c7;
+  height: 600px;
+}
+
+.text_area {
+  height: 500px;
+}
+
+.col-9 {
+  float: left;
+}
+
+.chattext {
+  word-wrap:break-word;
+}
