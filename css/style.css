@@ -5,6 +5,7 @@
 
 .text_area {
   height: 500px;
+  overflow: auto;
 }
 
 .col-9 {
