@@ -29,16 +29,33 @@ $('.btn').click(function(e) {
      var chatBlock = $('.text_area');
      if (newMessage.length > 0) {
        var newChatBlock =
+       '<div class="chatMain">' +
+       '<div class="chatNickName">' +
+       '<p>' +nickName+ '</p>'+
+       '</div>' +
        '<div class="chattext">'+
-       '<p>'+nickName+':'+newMessage+'--'+nowT+'</p>'+
+       '<p>'+newMessage+'</p>'+
+       '</div>' +
+       '<div class="chatTime">' +
+       '<p>' +nowT+ '</p>' +
+       '</div>'+
        '</div>';
+
        chatBlock.append(newChatBlock);
      }
    }
 
+   chatHistory = function() {
+     var history = {
+       name : nickName,
+       text : newMessage
+     }
 
+     localStorage.setItem('1', JSON.stringify(history));
+   }
 
  typeMessage();
  getData();
  replaceMessage();
+ chatHistory();
 });

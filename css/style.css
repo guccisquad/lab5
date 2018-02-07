@@ -14,4 +14,23 @@
 
 .chattext {
   word-wrap:break-word;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.chatMain {
+  max-width: 50%;
+}
+
+.chatTime {
+  float: right;
+  margin-top: -15px;
+  font-size: 0.65em;
+}
+
+.chatNickName {
+  font-size: 0.75em;
+  margin-bottom: -15px;
 }
