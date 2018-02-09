@@ -8,6 +8,10 @@
   overflow: auto;
 }
 
+.user_message {
+  resize: none;
+}
+
 .col-9 {
   float: left;
 }

@@ -4,25 +4,12 @@ $('.btn').click(function(e) {
    newMessage = "",
    nickName = $('.user_nickname').val(),
    newNick = "",
-   nowT = "",
+   nowT = moment().format('HH:mm');
    nameHistory = "",
    messageHistory = "";
-   var newID = 0;
 
    typeMessage = function() {
      newMessage = message;
-   }
-
-   getData = function() {
-     var newDate = new Date();
-     hours = newDate.getHours()
-     var minutes = newDate.getMinutes();
-     nowT = hours + ':' + minutes;
-     if (hours < 9) {
-       nowT = '0' + hours + ':' + minutes;
-     } else if (minutes < 9) {
-       nowT = hours + ':' + '0' + minutes;
-     }
    }
 
    replaceMessage = function() {
@@ -40,22 +27,21 @@ $('.btn').click(function(e) {
        '<p>' +nowT+ '</p>' +
        '</div>'+
        '</div>';
-
        chatBlock.append(newChatBlock);
      }
    }
 
-   chatHistory = function() {
-     var history = {
-       name : nickName,
-       text : newMessage
-     }
+   scrollingTextArea = function() {
+     var chatResult = $('.text_area');
+     chatResult.scrollTop(chatResult.prop('scrollHeight'));
+   }
 
-     localStorage.setItem('1', JSON.stringify(history));
+   clearingTextArea = function() {
+     $('.user_message').val("");
    }
 
  typeMessage();
- getData();
  replaceMessage();
- chatHistory();
+ clearingTextArea();
+ scrollingTextArea();
 });
