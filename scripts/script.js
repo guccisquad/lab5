@@ -5,14 +5,9 @@ $('.btn').click(function(e) {
    nickName = $('.user_nickname').val(),
    newNick = "",
    nowT = moment().format('HH:mm');
-   nameHistory = "",
-   messageHistory = "";
-
-   typeMessage = function() {
-     newMessage = message;
-   }
 
    replaceMessage = function() {
+     newMessage = message;
      var chatBlock = $('.text_area');
      if (newMessage.length > 0) {
        var newChatBlock =
@@ -40,7 +35,6 @@ $('.btn').click(function(e) {
      $('.user_message').val("");
    }
 
- typeMessage();
  replaceMessage();
  clearingTextArea();
  scrollingTextArea();
