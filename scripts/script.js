@@ -3,26 +3,15 @@ $('.btn').click(function() {
     newMessage = "",
     nickName = $('.user_nickname').val(),
     newNick = "",
-    nowT = moment().format('HH:mm');
+    nowT = moment().format('HH:mm'),
 
   typingMessage = function() {
-    newMessage = message;
-      var chatBlock = $('.text_area');
-        if (newMessage != 0 && nickName != 0) {
-          var newChatBlock =
-            '<div class="chatMain mt-2">' +
-            '<div class="chatNickName">' +
-            '<p>' +nickName+ '</p>'+
-            '</div>' +
-            '<div class="chattext">'+
-            '<p>'+newMessage+'</p>'+
-            '</div>' +
-            '<div class="chatTime">' +
-            '<p>' +nowT+ '</p>' +
-            '</div>'+
-            '</div>';
-              chatBlock.append(newChatBlock);
-          }
+    var history = {
+      name : nickName,
+      text : message,
+      time : nowT
+    };
+    localStorage.setItem('history', JSON.stringify(history));
    }
 
   scrollingTextArea = function() {
@@ -37,7 +26,6 @@ $('.btn').click(function() {
   typingMessage();
   scrollingTextArea();
   clearingTextArea();
-
 });
 
 
@@ -45,4 +33,32 @@ $('textarea').on('keydown',function(e) {
   if (e.keyCode == 13) {
     $('.btn').trigger('click');
   }
+});
+
+$(document).ready(function() {
+var  historyName = "",
+  historyText = "",
+  historyTime = "",
+  historyName = (JSON.parse(localStorage.getItem('history'))),
+  historyName = (JSON.parse(localStorage.getItem('history')).name),
+  historyText = (JSON.parse(localStorage.getItem('history')).text),
+  historyTime = (JSON.parse(localStorage.getItem('history')).time);
+  console.log(historyName);
+
+  var chatBlock = $('.text_area');
+    if (historyText != 0 && historyName != 0) {
+      var newChatBlock =
+        '<div class="chatMain mt-2">' +
+        '<div class="chatNickName">' +
+        '<p>' +historyName+ '</p>'+
+        '</div>' +
+        '<div class="chattext">'+
+        '<p>'+historyText+'</p>'+
+        '</div>' +
+        '<div class="chatTime">' +
+        '<p>' +historyTime+ '</p>' +
+        '</div>'+
+        '</div>';
+          chatBlock.append(newChatBlock);
+      }
 });
