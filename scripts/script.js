@@ -1,8 +1,5 @@
-$('.form-group textarea').on('keydown',function(e) {
-  if (e.keyCode != 13)
-  return;
-  var buttonEnter = $('.btn'),
-    message = $('.user_message').val(),
+$('.btn').click(function() {
+  var message = $('.user_message').val(),
     newMessage = "",
     nickName = $('.user_nickname').val(),
     newNick = "",
@@ -34,10 +31,18 @@ $('.form-group textarea').on('keydown',function(e) {
   }
 
   clearingTextArea = function() {
-    $('.user_message').val("");
+    $('textarea').val("");
   }
 
   typingMessage();
   scrollingTextArea();
   clearingTextArea();
+
+});
+
+
+$('textarea').on('keydown',function(e) {
+  if (e.keyCode == 13) {
+    $('.btn').trigger('click');
+  }
 });
