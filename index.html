@@ -14,13 +14,24 @@
 <body>
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-lg-4 mt-5">
-        <div class="text_area col-12">
-          <input type="text" class="user_nickname form-control mt-3" placeholder="Type a Nickname">
+      <div class="type_nickname col-md-4 mt-5">
+        <div class="user_form">
+          <input type="text" class="user_nickname form-control mt-5" placeholder="Type a Nickname">
+          <button type="button" class="nick_enter btn btn-primary mt-5 col-md-12 mb-5">ENTER</button>
         </div>
-        <div class="form-group">
-          <textarea class="user_message form-control col-9 mt-5" id="exampleFormControlTextarea1" placeholder="Type a Message" rows="1"></textarea>
-          <button type="button" class="btn btn-primary ml-3 mt-5">Send</button>
+      </div>
+      <div class="col-lg-4 mt-5">
+        <div class="chat">
+          <div class="me">
+
+          </div>
+          <div class="you">
+
+          </div>
+        </div>
+        <div class="form-group mt-5">
+          <textarea class="user_message form-control col-9" id="exampleFormControlTextarea1" placeholder="Type a Message" rows="1"></textarea>
+          <button type="button" class="btn btn-primary ml-3">Send</button>
         </div>
       </div>
     </div>
@@ -36,5 +47,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/moment.min.js"></script>
+    <script src="scripts/storage.js"></script>
+
 </body>
 </html>

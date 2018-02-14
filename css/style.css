@@ -1,12 +1,17 @@
+.type_nickname {
+  border: 1px solid #000;
+  border-radius: 15px;
+}
+
 .col-lg-4 {
   background-color: #fff;
   height: 600px;
   border: 1px solid #000;
   border-radius: 15px;
-
+  display: none;
 }
 
-.text_area {
+.chat {
   height: 500px;
   overflow: auto;
 }
@@ -27,9 +32,14 @@
   text-align: center;
 }
 
-.chatMain {
-  max-width: 50%;
+.mychattext {
+  word-wrap:break-word;
+  background-color: #14a9ff;
+  border-radius: 5px;
+  font-size: 0.9em;
+  text-align: center;
 }
+
 
 .chatTime {
   float: right;
@@ -40,4 +50,14 @@
 .chatNickName {
   font-size: 0.75em;
   margin-bottom: -15px;
+}
+
+.me {
+  float: right;
+  max-width: 48%;
+}
+
+.you {
+  float: left;
+  max-width: 48%;
 }
