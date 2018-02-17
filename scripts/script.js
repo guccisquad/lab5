@@ -3,6 +3,7 @@ $(".nick_enter").click(function() {
   if (nickName != 0) {
     $('.type_nickname').hide();
     $('.col-lg-4').show();
+    localStorage.clear();
   }
 });
 
