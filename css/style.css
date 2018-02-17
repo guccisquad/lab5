@@ -3,6 +3,7 @@
   border-radius: 15px;
 }
 
+
 .col-lg-4 {
   background-color: #fff;
   height: 600px;
@@ -12,7 +13,7 @@
 }
 
 .chat {
-  height: 500px;
+  height: 450px;
   overflow: auto;
 }
 
